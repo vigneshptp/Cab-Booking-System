@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Cab Booking</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🚕 Cab Booking</h1>
+
+        <p class="subtitle">
+            Book your ride in seconds
+        </p>
+
+
+        <div class="card">
+
+            <h2>Book a Ride</h2>
+
+            <input
+                type="text"
+                id="customerName"
+                placeholder="Your Name"
+            >
+
+            <input
+                type="text"
+                id="pickup"
+                placeholder="Pickup Location"
+            >
+
+            <input
+                type="text"
+                id="destination"
+                placeholder="Destination"
+            >
+
+            <button id="bookButton">
+                Book Cab
+            </button>
+
+        </div>
+
+
+        <div
+            id="rideDetails"
+            class="card hidden"
+        >
+
+            <h2>Ride Details</h2>
+
+            <p>
+                <strong>Booking ID:</strong>
+                <span id="rideId"></span>
+            </p>
+
+            <p>
+                <strong>Pickup:</strong>
+                <span id="ridePickup"></span>
+            </p>
+
+            <p>
+                <strong>Destination:</strong>
+                <span id="rideDestination"></span>
+            </p>
+
+            <p>
+                <strong>Fare:</strong>
+                ₹<span id="rideFare"></span>
+            </p>
+
+            <div class="status-box">
+
+                <strong>Status</strong>
+
+                <p id="rideStatus">
+                    Searching for driver...
+                </p>
+
+            </div>
+
+            <div id="driverDetails"></div>
+
+        </div>
+
+
+        <div
+            id="locationBox"
+            class="card hidden"
+        >
+
+            <h2>📍 Driver Location</h2>
+
+            <p id="locationText">
+                Waiting for driver location...
+            </p>
+
+        </div>
+
+        <p class="driver-link">
+            Are you a driver?
+            <a href="driver.html">
+                Open Driver Dashboard
+            </a>
+        </p>
+
+    </div>
+
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
