@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Driver Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🚗 Driver Dashboard</h1>
+
+        <div class="card">
+
+            <label>
+                Driver Name
+            </label>
+
+            <input
+                type="text"
+                id="driverName"
+                placeholder="Enter driver name"
+            >
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>Available Rides</h2>
+
+            <div id="rides">
+
+                <p class="empty">
+                    Waiting for new rides...
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="activeRide"
+            class="card hidden"
+        >
+
+            <h2>Active Ride</h2>
+
+            <p>
+                Customer:
+                <strong id="activeCustomer"></strong>
+            </p>
+
+            <p>
+                Pickup:
+                <strong id="activePickup"></strong>
+            </p>
+
+            <p>
+                Destination:
+                <strong id="activeDestination"></strong>
+            </p>
+
+            <p>
+                Status:
+                <strong id="activeStatus"></strong>
+            </p>
+
+
+            <div class="driver-actions">
+
+                <button
+                    onclick="updateStatus('Driver arriving')"
+                >
+                    Driver Arriving
+                </button>
+
+                <button
+                    onclick="updateStatus('Trip started')"
+                >
+                    Start Trip
+                </button>
+
+                <button
+                    onclick="updateStatus('Trip completed')"
+                >
+                    Complete Trip
+                </button>
+
+            </div>
+
+
+            <button
+                id="locationButton"
+            >
+                📍 Send My Location
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script src="driver.js"></script>
+
+</body>
+
+</html>
